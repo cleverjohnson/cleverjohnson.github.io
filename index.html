@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B0mbxrwiQ2+aRRoEYsY+1A76MTxOJFY1TGXUKIBrd99Qq3kOmrJfOgPF/wAz1Bkp" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="frosted-glass">
+    <header class="header frosted-glass" data-aos="fade-up">
+        <a href="" class="logo">J-C-G</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#about"><i class="fas fa-user"></i> Profile</a>
+                <a href="#services"><i class="fas fa-code"></i> Expertise</a>
+                <a href="#portfolio"><i class="fas fa-folder-open"></i> Projects</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Get in Touch</a>
+            </div>
+        </nav>        
+    </header>
+
+    <section class="home frosted-glass" id="home" data-aos="fade-up">
+        <div class="home-content">
+            <h3>"Hello, World!"</h3>
+            <h1>Johnson Clever Ggalabuzi</h1>
+            <h3>I am a <span id="typed-text">Full Stack Developer</span></h3>
+            <p>Blending Medical Informatics, Data Science, and Web Development, I focus on transforming healthcare. I leverage technology to turn health data into actionable insights, streamline workflows, and improve patient outcomes.</p>
+            <div class="social-media">
+                <a href="https://github.com/cleverjohnson" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/johnson-clever-ggalabuzi-164aa6222/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://www.instagram.com/g_c_johnson1/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                <a href="https://twitter.com/gcjohns?t=-rQ9kbdfBkn1mjIw_qQH4A&s=08" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
+            </div>
+    
+            <a href="#" class="btn" id="download-cv-btn">Download CV</a>
+        </div>
+    
+        <div class="home-img">
+            <div class="image-container">
+                <img src="images/photo.png" alt="Johnson Clever G" class="responsive-img">
+            </div>
+        </div>
+    </section>    
+
+    <section class="about frosted-glass" id="about" data-aos="fade-up">
+        <h2>Profile</h2>
+        <div class="about-content">
+            <div class="about-img-skills-wrapper">
+                <div class="about-img">
+                    <div class="terminal">
+                        <img src="/profile.jpg" alt="Your Name">
+                    </div>
+                </div>
+                <div class="about-skills-card" id="skills-card" style="display: none;">
+                    <h3>Proficiency</h3>
+                    <div class="skill">
+                        <label>Python</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>React</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>HTML</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>CSS</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>                    
+                    <div class="skill">
+                        <label>JavaScript</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>MYSQL</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <label>PHP</label>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                    </div>
+                    <!-- Add more skill bars as needed -->
+                </div>                
+            </div>
+            <div class="about-text">
+                <p class="section-text">
+                    As a seasoned Full Stack Developer and Data Scientist with a niche in Medical Informatics, I transform the healthcare landscape through data and technology. My <a href="#" id="proficiency-link">Proficiency</a> extends to languages like Python, JavaScript, and PHP, complemented by expertise in frameworks such as Django, Node.js, Flask, and React. Additionally, my skills in SQL, HTML, and CSS enable me to develop robust, user-friendly web applications.
+                </p>
+                <p class="section-text">
+                    More than a programmer, I navigate the intricacies of the healthcare industry and craft innovative solutions that boost patient outcomes and streamline medical workflows. Continually learning new technologies and staying abreast with industry trends is my pledge to making an enduring impact in the healthcare sector.
+                </p>
+            </div>
+        </div>
+    </section>
+       
+
+    <section class="services frosted-glass" id="services" data-aos="fade-up">
+        <h2>Expertise</h2>
+        <div class="services-container">
+            <div class="service">
+                <figure class="service-icon">
+                    <i class='bx bx-code'></i>
+                </figure>
+                <img src="images/web-development.jpg" alt="Web Development" class="service-img">
+                <div class="service-info">
+                    <h3>Web Development</h3>
+                    <p>Crafting interactive, responsive, and user-friendly websites and web applications using state-of-the-art technologies and frameworks. My solutions aim to deliver seamless user experiences while meeting the unique needs of my clients.</p>
+                </div>
+            </div>
+            <div class="service">
+                <figure class="service-icon">
+                    <i class="fas fa-database"></i>
+                </figure>                
+                <img src="images/database-management.jpg" alt="Database Management" class="service-img">
+                <div class="service-info">
+                    <h3>Database Management</h3>
+                    <p>Designing, implementing, and maintaining secure databases that effectively manage complex medical and healthcare data. My focus lies in ensuring data integrity, security, and accessibility to facilitate informed decision-making.</p>
+                </div>
+            </div>
+            <div class="service">
+                <figure class="service-icon">
+                    <i class='bx bx-line-chart'></i>
+                </figure>
+                <img src="images/data-analysis.jpg" alt="Data Analysis" class="service-img">
+                <div class="service-info">
+                    <h3>Data Analysis</h3>
+                    <p>Applying advanced analytical techniques to unearth valuable insights from healthcare data. My data analysis service aims to identify patterns and trends that can enhance patient care and optimize medical processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="portfolio frosted-glass" id="portfolio" data-aos="fade-up">
+        <h2>My Projects</h2>
+        <div class="portfolio-grid">
+            <!-- Project 1: EHR System -->
+            <div class="portfolio-card" data-aos="fade-up">
+                <img src="images/EHR.jpg" alt="EHR System Project" class="portfolio-img">
+                <!-- Project Info -->
+                <div class="portfolio-info">
+                    <h3>Electronic Health Record<i class="fas fa-notes-medical"></i>System</h3>
+                    <p>A comprehensive Electronic Health Record (EHR) system designed to securely manage patient medical histories...</p>
+                    <!-- Modal Button -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ehrModal">
+                        <i class="fas fa-info-circle"></i> More Details
+                    </button>
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/cleverjohnson/EHR1" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Project 2: Glucose Monitoring App -->
+            <div class="portfolio-card" data-aos="fade-up">
+                <img src="images/BMW.jpg" alt="Glucose Monitoring App Project" class="portfolio-img">
+                <!-- Project Info -->
+                <div class="portfolio-info">
+                    <h3>Automotive Health Application</h3>
+                    <p>An innovative mobile application that empowers individuals with diabetes to monitor their blood glucose levels...</p>
+                    <!-- Modal Button -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#glucoseModal">
+                        <i class="fas fa-info-circle"></i> More Details
+                    </button>
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/cleverjohnson/BMW" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Project 3: Physiotherapy Data Visualization -->
+            <div class="portfolio-card" data-aos="fade-up">
+                <img src="images/vis.jpg" alt="Physiotherapy Data Visualization Project" class="portfolio-img">
+                <!-- Project Info -->
+                <div class="portfolio-info">
+                    <h3>Physiotherapy Data Visualization</h3>
+                    <p>A data-driven application that streamlines the billing process for physiotherapy treatments...</p>
+                    <!-- Modal Button -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#physioModal">
+                        <i class="fas fa-info-circle"></i> More Details
+                    </button>
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/cleverjohnson/physiotherapy" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> View Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <section class="contact frosted-glass" id="contact" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xvonllrb" method="post">
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
+                    
+                    <label for="email">Your Email:</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                    
+                    <label for="message">Your Message:</label>
+                    <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h3>Get in Touch</h3>
+                <p><i class='bx bx-phone'></i> <a href="tel:+4917670339367">+4917670339367</a></p>
+                <p><i class='bx bx-envelope'></i> <a href="mailto:40ndgc2@gmail.com">40ndgc2@gmail.com</a></p>
+                <p><i class='bx bx-map'></i> <a href="https://www.google.com/maps?q=Munich,Germany" target="_blank">Munich, Germany</a></p>
+            </div>            
+        </div>
+    </section>
+
+    <!-- EHR System Modal -->
+<div class="modal fade" id="ehrModal" tabindex="-1" role="dialog" aria-labelledby="ehrModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ehrModalLabel">Electronic Health Record | System</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                More detailed information about the EHR System project goes here...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Glucose Monitoring App Modal -->
+<div class="modal fade" id="glucoseModal" tabindex="-1" role="dialog" aria-labelledby="glucoseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="glucoseModalLabel">Automotive Health Application</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                More detailed information about the Glucose Monitoring App project goes here...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Physiotherapy Data Visualization Modal -->
+<div class="modal fade" id="physioModal" tabindex="-1" role="dialog" aria-labelledby="physioModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="physioModalLabel">Physiotherapy Data Visualization</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                More detailed information about the Physiotherapy Data Visualization project goes here...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2023 Johnson Clever Ggalabuzi. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://github.com/cleverjohnson" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/johnson-clever-ggalabuzi-164aa6222/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://www.instagram.com/g_c_johnson1/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                <a href="https://twitter.com/gcjohns?t=-rQ9kbdfBkn1mjIw_qQH4A&s=08" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+    <script>
+        AOS.init();  
+
+        var typed = new Typed('#typed-text', {
+            strings: ["Full Stack Developer", "Data Scientist", "Digital Health Enthusiast"],
+            typeSpeed: 120,
+            backSpeed: 50,
+            loop: true
+        });   
+
+        $(document).ready(function() {
+            $('#proficiency-link').click(function(event) {
+                event.preventDefault();
+                $('.about-img').animate({marginLeft: "-100%"}, 1000);
+                $('#skills-card').show();
+            });
+            
+            $(window).scroll(function() {
+                var aboutTop = $('#about').offset().top;
+                var aboutBottom = aboutTop + $('#about').outerHeight();
+                var scrollTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                
+                if (scrollTop + windowHeight < aboutTop || scrollTop > aboutBottom) {
+                    $('.about-img').animate({marginLeft: "0"}, 1000);
+                    $('#skills-card').hide();
+                }
+            });
+        });
+
+        $('#proficiency-link').click(function(event) {
+            event.preventDefault();
+            $('.about-img').animate({marginLeft: "-100%"}, 1000);
+            $('#skills-card').show();
+            $('.skill-level').css('width', function() {
+                return $(this).data('level') + '%';
+            });
+        });
+
+        setTimeout(() => {
+            skillLevel.style.width = level + '%';
+        }, 500);        
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-3ziFidFTgxJX4BxX0P0W9FZJ7L/cz6g4ARnF7G2pzZe5Y1toK9Mm+vz5z71F0p9" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
