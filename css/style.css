@@ -40,6 +40,7 @@ p {
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -150,6 +151,11 @@ section {
 	color: #5ee7df;
     background-color: #b0bdca;
 }
+
+.element {
+    width: 50%;
+    padding: 1em;
+  }
 
 /* Home Section */
 
@@ -824,3 +830,12 @@ section {
     margin: 0;
     flex-grow: 1;
 }
+
+@media (max-width: 767px) {
+  }
+
+  @media (min-width: 768px) {
+   }
+
+   @media (min-width: 992px) {
+  }
