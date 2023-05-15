@@ -162,7 +162,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 100px;
     margin: 0;
     color: #F8F8F2;
     backdrop-filter: blur(10px);
@@ -171,7 +171,7 @@ section {
 
 .home-content {
     max-width: 600px;
-    text-align: center;
+	text-align: center
 }
 
 .home-content h1 {
@@ -183,8 +183,8 @@ section {
 
 .home-content h3 {
     color: #2b4cdb;
-    font-family: 'Ubuntu Mono', monospace;
-    font-weight: 15px;
+	font-family: 'Ubuntu Mono', monospace;
+	font-weight: 15px;
 }
 
 .home-content h1 span {
@@ -225,25 +225,25 @@ section {
 
 .home .btn {
     background-color: #F92672;
-    color: #F8F8F2;
-    transition: background-color 0.3s ease;
+    color: #F8F8F2; 
+	transition: background-color 0.3s ease;
 }
 
 .home .btn:hover {
-    background-color: #000000;
+	background-color: #000000;
 }
 
 .home-content p {
     font-size: 20px;
     margin-bottom: 30px;
     line-height: 1.6;
-    font-family: 'Ubuntu Mono', monospace;
-    color: #ffffff;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #ffffff;
 }
 
 #typed-text {
     color: #010008;
-    font-weight: bold;
+	font-weight: bold;
     font-size: 30px;
 }
 
@@ -259,8 +259,8 @@ section {
 }
 
 .social-media a:hover {
-    color: #ffffff;
-    transform: scale(1.2);
+	color: #ffffff;
+	transform: scale(1.2);
 }
 
 .btn {
@@ -282,13 +282,11 @@ section {
 .home-img {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
 }
 
 .image-container {
-    max-width: 400px;
-    width: 100%;
+    width: 400px;
     height: 500px;
     border-radius: 60%;
     overflow: hidden;
@@ -307,37 +305,34 @@ section {
 }
 
 .social-media a {
-    color: #0f0c9e;
-    font-size: 24px;
-    margin-right: 10px;
-    transition: color 0.3s ease;
-    display: inline-block;
-    }
-    
-    .social-media a:hover {
-    color: #ffffff;
-    transform: scale(1.2);
+    margin-right: 1em;
+}
+
+#download-cv-btn {
+    margin-top: 1em;
+}
+
+#download-cv-btn:hover {
+    background-color: #000000;
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 
-    @media (min-width: 768px) {
-        .home {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 100px;
-        }
-    
-        .home-content {
-            max-width: 60%;
-            text-align: left;
-        }
-    
-        .home-img {
-            margin-left: 2em;
-        }
-    }    
-   
+	}
 
+    .home-content {
+        max-width: 60%;
+    }
+
+    .home-img .image-container {
+        margin-left: 2em;
+    }
 
 /* About Section */
 .about {
