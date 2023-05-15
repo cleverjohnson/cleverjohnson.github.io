@@ -80,9 +80,10 @@ section {
 
 .header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px;
     position: sticky;
     top: 0;
     width: 100%;
@@ -105,7 +106,7 @@ section {
 .header .navbar .nav-links a {
     color: #000000;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     font-size: 1em;
     transition: 0.4s ease;
 }
@@ -123,39 +124,36 @@ section {
     font-size: 1.6rem;
     font-weight: bold;
     color: #fff;
-	font-family: 'Ubuntu Mono', monospace;
+    font-family: 'Ubuntu Mono', monospace;
 }
-
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .navbar .nav-links {
     display: flex;
-    gap: 2em;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .navbar .nav-links a {
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
-	font-family: 'Ubuntu Mono', monospace;
-	font-weight: bold;
-	padding: 5px 10px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: bold;
+    padding: 5px 10px;
     border-radius: 5px;
     background-color: #f5f5f5;
 }
 
 .navbar .nav-links a:hover {
-	color: #5ee7df;
+    color: #5ee7df;
     background-color: #b0bdca;
 }
 
-.element {
-    width: 100%;
-    padding: 1em;
-  }
 
 /* Home Section */
 
@@ -164,7 +162,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    padding: 50px;
     margin: 0;
     color: #F8F8F2;
     backdrop-filter: blur(10px);
@@ -173,7 +171,7 @@ section {
 
 .home-content {
     max-width: 600px;
-	text-align: center
+    text-align: center;
 }
 
 .home-content h1 {
@@ -185,8 +183,8 @@ section {
 
 .home-content h3 {
     color: #2b4cdb;
-	font-family: 'Ubuntu Mono', monospace;
-	font-weight: 15px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 15px;
 }
 
 .home-content h1 span {
@@ -227,25 +225,25 @@ section {
 
 .home .btn {
     background-color: #F92672;
-    color: #F8F8F2; 
-	transition: background-color 0.3s ease;
+    color: #F8F8F2;
+    transition: background-color 0.3s ease;
 }
 
 .home .btn:hover {
-	background-color: #000000;
+    background-color: #000000;
 }
 
 .home-content p {
     font-size: 20px;
     margin-bottom: 30px;
     line-height: 1.6;
-	font-family: 'Ubuntu Mono', monospace;
-	color: #ffffff;
+    font-family: 'Ubuntu Mono', monospace;
+    color: #ffffff;
 }
 
 #typed-text {
     color: #010008;
-	font-weight: bold;
+    font-weight: bold;
     font-size: 30px;
 }
 
@@ -261,8 +259,8 @@ section {
 }
 
 .social-media a:hover {
-	color: #ffffff;
-	transform: scale(1.2);
+    color: #ffffff;
+    transform: scale(1.2);
 }
 
 .btn {
@@ -284,11 +282,13 @@ section {
 .home-img {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-container {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     height: 500px;
     border-radius: 60%;
     overflow: hidden;
@@ -307,34 +307,37 @@ section {
 }
 
 .social-media a {
-    margin-right: 1em;
-}
-
-#download-cv-btn {
-    margin-top: 1em;
-}
-
-#download-cv-btn:hover {
-    background-color: #000000;
-    transform: scale(1.1);
-}
-
-@media (min-width: 768px) {
-    .home {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+    color: #0f0c9e;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+    display: inline-block;
+    }
+    
+    .social-media a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
     }
 
-	}
+    @media (min-width: 768px) {
+        .home {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 100px;
+        }
+    
+        .home-content {
+            max-width: 60%;
+            text-align: left;
+        }
+    
+        .home-img {
+            margin-left: 2em;
+        }
+    }    
+   
 
-    .home-content {
-        max-width: 60%;
-    }
-
-    .home-img .image-container {
-        margin-left: 2em;
-    }
 
 /* About Section */
 .about {
@@ -832,4 +835,46 @@ section {
 }
 
 @media (max-width: 767px) {
+  }
+
+  /* Adjustments for smaller screens */
+@media (max-width: 767px) {
+    body {
+      padding: 0;
+    }
+  
+    .container {
+      padding: 0;
+    }
+  
+    .header {
+      padding: 10px 20px;
+    }
+  
+    .logo {
+      font-size: 1.2rem;
+    }
+  
+    .header .navbar .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .navbar .nav-links a {
+      margin: 5px 0;
+    }
+  
+    section {
+      margin: 1em 0;
+      padding: 1em;
+    }
+  
+    .frosted-glass {
+      margin: 1em;
+      padding: 1em;
+    }
+  
+    .element {
+      padding: 0.5em;
+    }
   }
