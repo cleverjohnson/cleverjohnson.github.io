@@ -12,8 +12,8 @@ a {
 }
 
 body {
-    background: linear-gradient(135deg, rgba(127, 127, 127, 0.4), rgba(75, 81, 93, 0.4), rgba(28, 37, 48, 0.4)), 
-                radial-gradient(circle at center, #FF8C00, transparent), url(/bg.jpg);
+    background: linear-gradient(135deg, rgba(45, 0, 245, 0.4), rgba(57, 141, 137, 0.4), rgba(0, 115, 255, 0.4)), 
+                radial-gradient(circle at center, #000000, transparent), url(/bg.jpg);
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
@@ -113,7 +113,7 @@ section {
 
 .nav-links a.active {
     background-color: #1e90ff;
-    color: #fff;
+    color: #1e3097;
 }
 
 .header .navbar .nav-links a:hover {
@@ -154,12 +154,51 @@ section {
     background-color: #b0bdca;
 }
 
+/* Styles for small screens */
+@media screen and (max-width: 600px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        padding: 5px 0;
+    }
+
+    .navbar .nav-links a {
+        text-align: center;
+        padding: 5px;
+        border-top: 1px solid #ddd;
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    /* Dropdown button */
+    .navbar .dropdown-btn {
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
+/* Styles for large screens */
+@media screen and (min-width: 601px) {
+    .navbar .dropdown-btn {
+        display: none;
+    }
+
+    .navbar .nav-links {
+        display: flex;
+    }
+}
+
 
 /* Home Section */
 
 .home {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 100px;
@@ -317,22 +356,39 @@ section {
     transform: scale(1.1);
 }
 
-@media (min-width: 768px) {
+/* Media queries for screens smaller than 600px */
+@media screen and (max-width: 600px) {
     .home {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column-reverse;
         align-items: flex-start;
+        padding: 50px 20px; /* Reduce padding */
     }
-
-	}
-
     .home-content {
-        max-width: 60%;
+        max-width: 100%;
+        text-align: center; /* Allow content to take full width */
     }
+    .home-img {
+        position: flex-end; /* Align the image to the left */
+    }
+    .home-content h1 {
+        font-size: 32px; /* Reduce font size */
+    }
+    .home-content h3 {
+        font-size: 20px; /* Reduce font size */
+    }
+    .home-content p {
+        font-size: 16px;
+        color: black;
+    }
+    .image-container {
+        width: 130px; /* Reduce image size */
+        height: 150px;
+    }
+    .btn {
+        font-size: 18px; /* Reduce button font size */
+    }
+}
 
-    .home-img .image-container {
-        margin-left: 2em;
-    }
 
 /* About Section */
 .about {
@@ -348,6 +404,14 @@ section {
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1em;
+	text-align: center;
 }
 
 .about-text {
@@ -451,14 +515,7 @@ section {
     border-radius: 5px;
 }
 
-.about h2 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 1em;
-}
-
-.about h2, .section-text {
+.section-text {
     padding: 0.5em 0;
 }
 
@@ -522,6 +579,29 @@ section {
     );
 }
 
+/* Media queries for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .about-text, .about-img {
+        width: 100%;
+        margin: 0;
+    }
+    .about-img img {
+        max-height: 200px;
+    }
+    .about-text h2, .about-text p {
+        font-size: 0.89em; /* Adjust size as needed */
+    }
+    .btn {
+        font-size: 0.8em; /* Adjust size as needed */
+    }
+}
+
+
 /* Services Section */
 .services-container {
     display: grid;
@@ -582,26 +662,51 @@ section {
 }
 
 .services h2 {
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin-bottom: 30px;
-    font-family: "Courier New", Courier, monospace;
-    letter-spacing: 1px;
-    font-size: 34px;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1em;
+	text-align: center;
   }
+
+  /* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    
+    .services h2 {
+        font-size: 2em; /* Reduce font size */
+    }
+
+    .services-container {
+        display: flex; /* Change to flex layout */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Enable scroll snapping */
+    }
+
+    .service {
+        flex: 0 0 100%; /* Each service takes up 100% of the viewport width */
+        scroll-snap-align: start; /* Align to the start of the element */
+    }
+    .service-icon {
+        font-size: 1.5rem; /* Reduce icon size */
+    }
+
+    .service-info h3 {
+        font-size: 1rem; /* Reduce font size */
+    }
+}
   
 /* Portfolio Section */
-/* Portfolio section */
 .portfolio {
     background-color: #f4f4f4;
     padding: 50px 0;
 }
 
 .portfolio h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 50px;
-    color: #333;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1em;
+	text-align: center;
 }
 
 /* Portfolio grid */
@@ -611,6 +716,11 @@ section {
     gap: 20px;
     justify-items: center;
 }
+
+#project-count {
+    color: blue;
+}
+
 
 /* Portfolio card */
 .portfolio-card {
@@ -658,6 +768,31 @@ section {
     color: #fff;
 }
 
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    
+    .portfolio h2 {
+        font-size: 2em; /* Reduce font size */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack grid items vertically on small screens */
+    }
+
+    .portfolio-card img {
+        height: 150px; /* Reduce image height */
+    }
+
+    .portfolio-info h3 {
+        font-size: 1.2em; /* Reduce font size */
+    }
+    
+    .btn {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add bottom margin */
+    }
+}
+
 
 /* Contact Section */
 .contact {
@@ -670,10 +805,11 @@ section {
 }
 
 .contact h2 {
-    margin-bottom: 20px;
-    margin-top: 10px;
-    font-size: 2em;
-    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1em;
+	text-align: center;
 }
 
 .contact-container {
@@ -682,6 +818,7 @@ section {
     width: 100%;
     gap: 2em;
     transition: all 0.5s;
+    flex-wrap: wrap;
 }
 
 .contact-form,
@@ -694,11 +831,13 @@ section {
     max-width: 500px;
     box-sizing: border-box;
     transition: all 0.5s;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-form label,
 .contact-details h3 {
-    font-size: 1.4em;
+    font-size: 1.em;
     color: #000000;
     margin-bottom: 10px;
     display: block;
@@ -728,7 +867,7 @@ section {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #ffffff;
+    color: #26df5d;
     transition: all 0.3s ease;
 }
 
@@ -788,7 +927,7 @@ section {
 }
 
 .contact-details a:hover {
-    color: #b490ca;
+    color: #e228ba;
 }
 
 .contact-details a {
@@ -812,6 +951,19 @@ section {
     transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .contact-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 2em;
+        transition: all 0.5s;
+        flex-wrap: wrap;
+    }
+}
+
+
+
 .footer {
     color: #fff;
     padding: 20px;
@@ -829,47 +981,14 @@ section {
     flex-grow: 1;
 }
 
-@media (max-width: 767px) {
-  }
+
 
   /* Adjustments for smaller screens */
-@media (max-width: 767px) {
+  @media only screen and (max-width: 600px) {
     body {
-      padding: 0;
+        font-size: 16px;
     }
-  
-    .container {
-      padding: 0;
+    h2 {
+        font-size: 24px;
     }
-  
-    .header {
-      padding: 10px 20px;
-    }
-  
-    .logo {
-      font-size: 1.2rem;
-    }
-  
-    .header .navbar .nav-links {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .navbar .nav-links a {
-      margin: 5px 0;
-    }
-  
-    section {
-      margin: 1em 0;
-      padding: 1em;
-    }
-  
-    .frosted-glass {
-      margin: 1em;
-      padding: 1em;
-    }
-  
-    .element {
-      padding: 0.5em;
-    }
-  }
+}

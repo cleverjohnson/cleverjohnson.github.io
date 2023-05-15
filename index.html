@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johnson</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="your-integrity-value" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="your-integrity-value" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,6 +25,11 @@
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xM6B5z6W5" crossorigin="anonymous">
+    <script src="https://pdfcrowd.com/js/crowddoc.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
@@ -31,9 +37,8 @@
     <header class="header frosted-glass" data-aos="fade-up">
         <a href="" class="logo">J-C-G</a>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
-
         <nav class="navbar">
+            <button class="dropdown-btn">☰</button>
             <div class="nav-links">
                 <a href="#home" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                 <a href="#about"><i class="fas fa-user"></i> Profile</a>
@@ -57,7 +62,7 @@
                 <a href="https://twitter.com/gcjohns?t=-rQ9kbdfBkn1mjIw_qQH4A&s=08" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
             </div>
     
-            <a href="#" class="btn" id="download-cv-btn" onclick="downloadCV()">Download CV</a>
+            <a href="#" class="btn" id="download-cv-btn">Download CV</a>
         </div>
     
         <div class="home-img">
@@ -73,7 +78,7 @@
             <div class="about-img-skills-wrapper">
                 <div class="about-img">
                     <div class="terminal">
-                        <img src="/profile.jpg" alt="Your Name">
+                        <img src="profile.jpg" alt="GCJ">
                     </div>
                 </div>
                 <div class="about-skills-card" id="skills-card" style="display: none;">
@@ -172,7 +177,7 @@
     </section>
     
     <section class="portfolio frosted-glass" id="portfolio" data-aos="fade-up">
-        <h2>My Projects</h2>
+        <h2>My Projects <span id="project-count">0</span></h2>
         <div class="portfolio-grid">
             <!-- Project 1: EHR System -->
             <div class="portfolio-card" data-aos="fade-up">
@@ -182,11 +187,11 @@
                     <h3>Electronic Health Record<i class="fas fa-notes-medical"></i>System</h3>
                     <p>A comprehensive Electronic Health Record (EHR) system designed to securely manage patient medical histories...</p>
                     <!-- Modal Button -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ehrModal">
+                    <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#ehrModal">
                         <i class="fas fa-info-circle"></i> More Details
                     </button>
                     <!-- GitHub Link -->
-                    <a href="https://github.com/cleverjohnson/EHR1" target="_blank" class="btn btn-secondary">
+                    <a href="https://github.com/cleverjohnson/EHR1" target="_blank" class="btn btn-secondary btn-sm">
                         <i class="fab fa-github"></i> View Code on GitHub
                     </a>
                 </div>
@@ -194,21 +199,46 @@
     
             <!-- Project 2: Glucose Monitoring App -->
             <div class="portfolio-card" data-aos="fade-up">
-                <img src="images/BMW.jpg" alt="Glucose Monitoring App Project" class="portfolio-img">
+                <!-- Bootstrap Carousel -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/BMW.jpg" class="d-block w-100 portfolio-img" alt="BMW Health App Project">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/glucose.png" class="d-block w-100 portfolio-img" alt="Glucose Monitoring Screen">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/glucose1.png" class="d-block w-100 portfolio-img" alt="Glucose Monitoring Details Screen">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/glucose2.png" class="d-block w-100 portfolio-img" alt="Glucose Monitoring Graph Screen">
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
                 <!-- Project Info -->
                 <div class="portfolio-info">
                     <h3>Automotive Health Application</h3>
                     <p>An innovative mobile application that empowers individuals with diabetes to monitor their blood glucose levels...</p>
                     <!-- Modal Button -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#glucoseModal">
+                    <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#glucoseModal">
                         <i class="fas fa-info-circle"></i> More Details
                     </button>
                     <!-- GitHub Link -->
-                    <a href="https://github.com/cleverjohnson/BMW-HEALTHLIVE" target="_blank" class="btn btn-secondary">
+                    <a href="https://github.com/cleverjohnson/BMW-HEALTHLIVE" target="_blank" class="btn btn-secondary btn-sm">
                         <i class="fab fa-github"></i> View Code on GitHub
                     </a>
                 </div>
-            </div>
+            </div>                        
     
             <!-- Project 3: Physiotherapy Data Visualization -->
             <div class="portfolio-card" data-aos="fade-up">
@@ -218,11 +248,11 @@
                     <h3>Physiotherapy Data Visualization</h3>
                     <p>A data-driven application that streamlines the billing process for physiotherapy treatments...</p>
                     <!-- Modal Button -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#physioModal">
+                    <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#physioModal">
                         <i class="fas fa-info-circle"></i> More Details
                     </button>
                     <!-- GitHub Link -->
-                    <a href="https://github.com/cleverjohnson/DataVisualisation-Physiotherapy" target="_blank" class="btn btn-secondary">
+                    <a href="https://github.com/cleverjohnson/DataVisualisation-Physiotherapy" target="_blank" class="btn btn-secondary btn-sm">
                         <i class="fab fa-github"></i> View Code on GitHub
                     </a>
                 </div>
@@ -250,7 +280,7 @@
                 <h3>Get in Touch</h3>
                 <p><i class='bx bx-phone'></i> <a href="tel:+4917670339367">+4917670339367</a></p>
                 <p><i class='bx bx-envelope'></i> <a href="mailto:40ndgc2@gmail.com">40ndgc2@gmail.com</a></p>
-                <p><i class='bx bx-map'></i> <a href="https://www.google.com/maps?q=Munich,Germany" target="_blank">Munich, Germany</a></p>
+                <p><i class='bx bx-map'></i> <a href="https://www.google.com/maps?q=Munich,Germany" target="_blank">Woching 3, Pfarrkirchen-Germany</a></p>
             </div>            
         </div>
     </section>
@@ -289,11 +319,12 @@
                 More detailed information about the Glucose Monitoring App project goes here...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Physiotherapy Data Visualization Modal -->
 <div class="modal fade" id="physioModal" tabindex="-1" role="dialog" aria-labelledby="physioModalLabel" aria-hidden="true">
@@ -314,8 +345,6 @@
         </div>
     </div>
 </div>
-
-
     
     <footer class="footer">
         <div class="footer-content">
@@ -340,11 +369,15 @@
             loop: true
         });   
 
+
         $(document).ready(function() {
             $('#proficiency-link').click(function(event) {
                 event.preventDefault();
-                $('.about-img').animate({marginLeft: "-100%"}, 1000);
-                $('#skills-card').show();
+                $('.about-img').css('transform', 'translateX(-100%)');
+                $('.about-skills-card').css('transform', 'translateX(0)');
+                $('.skill-level').css('width', function() {
+                    return $(this).data('level') + '%';
+                });
             });
             
             $(window).scroll(function() {
@@ -354,39 +387,67 @@
                 var windowHeight = $(window).height();
                 
                 if (scrollTop + windowHeight < aboutTop || scrollTop > aboutBottom) {
-                    $('.about-img').animate({marginLeft: "0"}, 1000);
-                    $('#skills-card').hide();
+                    $('.about-img').css('transform', 'translateX(0)');
+                    $('.about-skills-card').css('transform', 'translateX(100%)');
+                    $('.skill-level').css('width', '0');
                 }
             });
         });
-
-        $('#proficiency-link').click(function(event) {
-            event.preventDefault();
-            $('.about-img').animate({marginLeft: "-100%"}, 1000);
-            $('#skills-card').show();
-            $('.skill-level').css('width', function() {
-                return $(this).data('level') + '%';
-            });
-        });
+        
 
         setTimeout(() => {
             skillLevel.style.width = level + '%';
         }, 500);        
 
+        function convertToPdf() {
+            var pdf = new crowdHTMLtoPDF();
+            pdf.setApiToken("Y4faa246606c7de5b09b693c99f87dced");
+            pdf.convertUrlToFile("https://github.com/cleverjohnson/My-CV", "cv.pdf");
+        }
+         
 
-            function downloadCV() {
-              const link = document.createElement('a');
-              link.href = 'https://github.com/cleverjohnson/cleverjohnson.github.io/raw/main/Johnson_Ggalabuzi_-_Full_Stack_Developer.pdf';
-              link.download = 'Johnson_Ggalabuzi_-_Full_Stack_Developer.pdf';
-              link.target = '_blank';
-              link.click();
+        
+        var projectCount = document.querySelector('#project-count');
+
+        // Options for the IntersectionObserver
+        var options = {
+          root: null, // use the document's viewport as the container
+          rootMargin: '0px',
+          threshold: 0.1 // the observer callback will run when 10% of the target is visible
+        };
+
+        // Callback for the IntersectionObserver
+        function handleIntersect(entries, observer) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) { // if the target is visible
+              // Start counting
+              var count = 0;
+              var intervalId = setInterval(function() {
+                if (count < 100) {
+                  count += 1;
+                  projectCount.textContent = count + '+';
+                } else {
+                  clearInterval(intervalId);
+                }
+              }, 20); // Increase count every 20ms
             }
-          
+          });
+        }
+
+        // Create the observer
+        var observer = new IntersectionObserver(handleIntersect, options);
+
+        // Start observing an element
+        observer.observe(projectCount);
+
+
+        $(document).ready(function(){
+            $(".dropdown-btn").click(function(){
+                $(".nav-links").slideToggle();
+            });
+        });
+
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-3ziFidFTgxJX4BxX0P0W9FZJ7L/cz6g4ARnF7G2pzZe5Y1toK9Mm+vz5z71F0p9" crossorigin="anonymous"></script>
-
 
 </body>
 </html>
