@@ -57,7 +57,7 @@
                 <a href="https://twitter.com/gcjohns?t=-rQ9kbdfBkn1mjIw_qQH4A&s=08" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
             </div>
     
-            <a href="C:\Users\40ndg\OneDrive\Desktop\webgit\cleverjohnson.github.io\Johnson_Ggalabuzi_-_Full_Stack_Developer.pdf" class="btn" id="download-cv-btn">Download CV</a>
+            <a href="#" class="btn" id="download-cv-btn" onclick="downloadCV()">Download CV</a>
         </div>
     
         <div class="home-img">
@@ -373,6 +373,15 @@
             skillLevel.style.width = level + '%';
         }, 500);        
 
+
+            function downloadCV() {
+              const link = document.createElement('a');
+              link.href = 'https://github.com/cleverjohnson/cleverjohnson.github.io/raw/main/Johnson_Ggalabuzi_-_Full_Stack_Developer.pdf';
+              link.download = 'Johnson_Ggalabuzi_-_Full_Stack_Developer.pdf';
+              link.target = '_blank';
+              link.click();
+            }
+          
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
