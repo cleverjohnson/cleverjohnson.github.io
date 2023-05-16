@@ -52,7 +52,7 @@
     <section class="home frosted-glass" id="home" data-aos="fade-up">
         <div class="home-content">
             <h3>"Hello, World!"</h3>
-            <h1>Johnson Clever Ggalabuzi</h1>
+            <h1>Johnson | Clever</h1>
             <h3>I am a <span id="typed-text">Full Stack Developer</span></h3>
             <p>Blending Medical Informatics, Data Science, and Web Development, I focus on transforming healthcare. I leverage technology to turn health data into actionable insights, streamline workflows, and improve patient outcomes.</p>
             <div class="social-media">
@@ -62,7 +62,8 @@
                 <a href="https://twitter.com/gcjohns?t=-rQ9kbdfBkn1mjIw_qQH4A&s=08" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
             </div>
     
-            <a href="#" class="btn" id="download-cv-btn">Download CV</a>
+            <a href="https://raw.githubusercontent.com/cleverjohnson/cleverjohnson.github.io/main/MY-CV.pdf" class="btn" id="download-cv-btn" download>Download CV</a>
+
         </div>
     
         <div class="home-img">
@@ -359,6 +360,8 @@
     </footer>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         AOS.init();  
 
@@ -373,10 +376,13 @@
         $(document).ready(function() {
             $('#proficiency-link').click(function(event) {
                 event.preventDefault();
-                $('.about-img').css('transform', 'translateX(-100%)');
-                $('.about-skills-card').css('transform', 'translateX(0)');
-                $('.skill-level').css('width', function() {
-                    return $(this).data('level') + '%';
+                $('.about-img').hide();
+                $('#skills-card').show();
+                $('.skill-level').each(function() {
+                    let level = $(this).data('level');
+                    $(this).animate({
+                        'width': level + '%'
+                    }, 500);
                 });
             });
             
@@ -387,17 +393,14 @@
                 var windowHeight = $(window).height();
                 
                 if (scrollTop + windowHeight < aboutTop || scrollTop > aboutBottom) {
-                    $('.about-img').css('transform', 'translateX(0)');
-                    $('.about-skills-card').css('transform', 'translateX(100%)');
+                    $('.about-img').show();
+                    $('#skills-card').hide();
                     $('.skill-level').css('width', '0');
                 }
             });
         });
-        
 
-        setTimeout(() => {
-            skillLevel.style.width = level + '%';
-        }, 500);        
+
 
         function convertToPdf() {
             var pdf = new crowdHTMLtoPDF();
